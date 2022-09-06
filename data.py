@@ -12,6 +12,13 @@ class Tetris(QMainWindow):
     def initUI(self):
         self.tboard = board(self)
         self.setCentralWidget(self.tboard)
+        self.statusbar = self.statusBar()
+        self.tboard.msg2statusbar[str].connect(self.statusbar.showMessage)
+        self.tboard.start()
+        self.resize(180, 380)
+        self.center()
+        self.setWindowTitle('Tetris')
+        self.show
 
     def center(self):
         screen = QDesktopWidget().screenGeometry()
