@@ -12,3 +12,8 @@ class Tetris(QMainWindow):
     def initUI(self):
         self.tboard = board(self)
         self.setCentralWidget(self.tboard)
+
+    def center(self):
+        screen = QDesktopWidget().screenGeometry()
+        size = self.geometry()
+        self.move((screen.width() - size.wigth()) / 2, (screen.height() - size.height()) / 2)
