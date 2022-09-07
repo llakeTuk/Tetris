@@ -31,3 +31,17 @@ class Board(QFrame):
     BoardWidth = 10
     BoardHeight = 22
     Speed = 300
+    
+    def __init__(self, parent):
+        
+        super().__init__(parent)
+        self.initBoard()
+
+    def initBoard(self):
+
+        self.timer = QBasicTimer()
+        self.isWaitingAfterLine = False
+        self.curX = 0
+        self.curY = 0
+        self.numLinesRemoved = 0
+        self.board = []
