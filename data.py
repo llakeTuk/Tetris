@@ -24,3 +24,10 @@ class Tetris(QMainWindow):
         screen = QDesktopWidget().screenGeometry()
         size = self.geometry()
         self.move((screen.width() - size.wigth()) / 2, (screen.height() - size.height()) / 2)
+
+class Board(QFrame):
+
+    msg2Statusbar = pyqtSignal(str)
+    BoardWidth = 10
+    BoardHeight = 22
+    Speed = 300
