@@ -45,3 +45,17 @@ class Board(QFrame):
         self.curY = 0
         self.numLinesRemoved = 0
         self.board = []
+        self.setFocusPolicy(Qt.StrongFocus)
+        self.isStarted = False
+        self.isPaused = False
+        self.clearBoard()
+
+    def shapeAt(self, x, y):
+
+        return self.board[(y * Board.BoardWidth) + x]
+
+    def setShapeAt(self, x, y, shape):
+
+        self.board[(y * Board.BoardWidth) + x] = shape
+
+    def 
