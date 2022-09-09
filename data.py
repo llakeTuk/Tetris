@@ -58,4 +58,15 @@ class Board(QFrame):
 
         self.board[(y * Board.BoardWidth) + x] = shape
 
-    def 
+    def squareWidth(self):
+        
+        return self.contentsRect().width() // Board.BoardWidth
+    
+    def squareHeight(self):
+        
+        return self.contentsRect().height() // Board.BoardHeight
+    
+    def start(self):
+        
+        if self.isPaused:
+            return
