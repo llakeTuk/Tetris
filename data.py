@@ -70,3 +70,23 @@ class Board(QFrame):
         
         if self.isPaused:
             return
+        self.isStarted = True
+        self.isWaitingAfterLine = False
+        self.numLinesRemoved = 0
+        self.clearBoard()
+        self.msg2Statusbar.emit(str(self.numLinesRemoved))
+        self.newPiece()
+        self.timer.start(Board.Speed, self)
+
+    def pause(self):
+
+        if not self.isStarted:
+            return
+        self.isPaused = not self.isPaused
+        if self.isPaused:
+            self.timer.stop()
+            self.msg2statusbar.emit('Paused')
+        else:
+            self.timer.start(Board.Speed, self)
+            self.msg2statusbar.emit(str(self.numLinesRemoved))
+        self.update()
