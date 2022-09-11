@@ -90,3 +90,7 @@ class Board(QFrame):
             self.timer.start(Board.Speed, self)
             self.msg2statusbar.emit(str(self.numLinesRemoved))
         self.update()
+
+    def paintEvent(self, event):
+
+        painter = QPainter(self)
