@@ -108,3 +108,38 @@ class Board(QFrame):
                 self.drawSquare(painter, rect.left() + x * self.squareWidth(), boardTop + (Board.BoardHeight - y -1) * self.squareHeight(), self.curPiece.shape())
     
     def keyPressEvent(self, event):
+        
+        if not self.isStarted or self.curPiece.shape() == Tetrominoe.NoShape:
+            super(Board, self).keyPressEvent(event)
+            return
+        key = event.key()
+        if key == Qt.Key_P:
+            self.pause()
+            return
+        if self.isPaused:
+            return
+        elif key == Qt.Key_left:
+            self.tryMove(self.curPiece, self.curX - 1, self.curY)
+        elif key == Qt.Key_Right:
+            self.tryMove(self.curPiece, self.curX + 1, self.curY)
+        elif key == Qt.Key_Down:
+            self.tryMove(self.curPiece.rotateRight(), self.curX, self.curY)
+        elif key == Qt.Key_Up:
+            self.tryMove(self.curPiece.rotateLeft(), self.curX, self.curY)
+        elif key == Qt.Key_Space:
+            self.dropDown()
+        elif key == Qt.Key_D:
+            self.oneLineDown()
+        else:
+            super(Board, self).keyPressEvent(event)
+    
+    def timerEvent(self, event):
+        if event.timerId() == self.timer.timerId():
+            if self.isWaitingAfterLine:
+                self.isWaitingAfterLine = False
+                self.newPiece()
+            else:
+                self.oneLineDown
+        else:
+            super(Board, self).timerEvent(event)
+            
