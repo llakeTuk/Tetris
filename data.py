@@ -134,6 +134,7 @@ class Board(QFrame):
             super(Board, self).keyPressEvent(event)
     
     def timerEvent(self, event):
+        
         if event.timerId() == self.timer.timerId():
             if self.isWaitingAfterLine:
                 self.isWaitingAfterLine = False
@@ -143,3 +144,17 @@ class Board(QFrame):
         else:
             super(Board, self).timerEvent(event)
             
+    def clearBoard(self):
+        
+        for i in range(Board.BoardHeight * Board.BoardWidth):
+            self.board.append(Tetrominoe.NoShape)
+    
+    def dropDown(self):
+        
+        newY = self.curY
+        while newY > 0:
+            if not self.tryMove(self.curPiece, self.curX, newY - 1):
+                break
+            newY -= 1
+        self.pieceDropped()
+        
