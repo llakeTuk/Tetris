@@ -158,3 +158,12 @@ class Board(QFrame):
             newY -= 1
         self.pieceDropped()
         
+    def pieceDropped(self):
+        
+        for i in range(4):
+            x = self.curX + self.curPiece.x(i)
+            y = self.curY - self.curPiece.y(i)
+            self.setShapeAt(x, y, self.curPiece.shape())
+        self.remoweFullLines()
+        if not self.isWaitingAfterLine:
+            self.newPiece()
