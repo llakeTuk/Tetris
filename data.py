@@ -167,3 +167,21 @@ class Board(QFrame):
         self.remoweFullLines()
         if not self.isWaitingAfterLine:
             self.newPiece()
+            
+    def removeFullLines(self):
+        
+        numFullLines = 0
+        rowsToRemove = []
+        for i in range(Board.BoardHeight):
+            n = 0
+            for j in range(Board.BoardWidth):
+                if not self.shape(j, i) == Tetrominoe.NoShape:
+                    n += 1
+            if n == 10:
+                rowsToRemove.append(i)
+        rowsToRemove.reverse()
+        for m in rowsToRemove:
+            for k in range(m, Board.BoardHeight):
+                for l in range(Board.BoardWidth):
+                    self.setShapeAt(l, k, self.shapeAt(l, k + 1))
+        numFullLines = numFullLines + len(rowsToRemove)
