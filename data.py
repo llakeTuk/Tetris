@@ -185,3 +185,10 @@ class Board(QFrame):
                 for l in range(Board.BoardWidth):
                     self.setShapeAt(l, k, self.shapeAt(l, k + 1))
         numFullLines = numFullLines + len(rowsToRemove)
+        if numFullLines > 0:
+            self.numLinesRemoved = self.numLinesRemoved + numFullLines
+            self.msg2Statusbar.emit(str(self.numLinesRemoved))
+            self.isWaitingAfterLine = True
+            self.curPiece.setShape(Tetrominoe.NoShape)
+            self.update()
+            
