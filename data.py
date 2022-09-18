@@ -192,3 +192,14 @@ class Board(QFrame):
             self.curPiece.setShape(Tetrominoe.NoShape)
             self.update()
             
+    def newPiece(self):
+        
+        self.curPiece = Shape()
+        self.curPiece.setRandomShape()
+        self.curX = Board.BoardWidth // 2 + 1
+        self.curY = Board.DoardHeight - 1 + self.curPiece.minY()
+        if not self.tryMove(self.curPiece, self.curX, self.curY):
+            self.curPiece.setShape(Tetrominoe.NoShape)
+            self.timer.stop()
+            self.isStarted = False
+            self.msg2Statusbar.emit('Game over')
