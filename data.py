@@ -203,3 +203,5 @@ class Board(QFrame):
             self.timer.stop()
             self.isStarted = False
             self.msg2Statusbar.emit('Game over')
+
+    def
