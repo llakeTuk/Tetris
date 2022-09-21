@@ -157,6 +157,11 @@ class Board(QFrame):
                 break
             newY -= 1
         self.pieceDropped()
+
+    def oneLineDown(self):
+
+        if not self.tryMove(self.curPiece, self.curX, self.curY - 1):
+            self.pieceDropped()
         
     def pieceDropped(self):
         
