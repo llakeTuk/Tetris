@@ -204,4 +204,4 @@ class Board(QFrame):
             self.isStarted = False
             self.msg2Statusbar.emit('Game over')
 
-    def
+    def tryMove(self, newPiece, newX, newY):
