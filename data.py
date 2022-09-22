@@ -210,3 +210,7 @@ class Board(QFrame):
             self.msg2Statusbar.emit('Game over')
 
     def tryMove(self, newPiece, newX, newY):
+
+        for i in range(4):
+            x = newX + newPiece.x(i)
+            y = newY - newPiece.y(i)
