@@ -214,3 +214,13 @@ class Board(QFrame):
         for i in range(4):
             x = newX + newPiece.x(i)
             y = newY - newPiece.y(i)
+            if x < 0 or x >= Board.BoardWidth or y < 0 or y >= Board.BoardHeight:
+                return False
+            if self.shapeAt(x, y) != Tetrominoe.NoShape:
+                return False
+        self.curPiece = newPiece
+        self.curX = newX
+        self.curY = newY
+        self.update()
+        return True
+    
