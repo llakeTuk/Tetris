@@ -224,5 +224,7 @@ class Board(QFrame):
         self.update()
         return True
 
-    def
+    def drawSquare(self, painter, x, y, shape):
+
+        colorTable = [
     
