@@ -230,5 +230,6 @@ class Board(QFrame):
                       0xCCCC66, 0xCC66CC, 0x66CCCC, 0xDAAA00]
 
         color = QColor(colorTable[shape])
-        painter.fillRect(x + 1, y + 1, 
+        painter.fillRect(x + 1, y + 1, self.square.Widht() - 2, self.squareHeight() - 2, color)
+        painter.setPen(color.lighter())
     
