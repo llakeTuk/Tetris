@@ -232,4 +232,7 @@ class Board(QFrame):
         color = QColor(colorTable[shape])
         painter.fillRect(x + 1, y + 1, self.square.Widht() - 2, self.squareHeight() - 2, color)
         painter.setPen(color.lighter())
+        painter.drawLine(x, y + self.squareHeight() - 1, x, y)
+        painter.drawLine(x, y, x + self.squareWidth() - 1, y)
+        painter.setPen(color.darker())
     
