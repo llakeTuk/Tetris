@@ -235,5 +235,5 @@ class Board(QFrame):
         painter.drawLine(x, y + self.squareHeight() - 1, x, y)
         painter.drawLine(x, y, x + self.squareWidth() - 1, y)
         painter.setPen(color.darker())
-        painter.drawLine(x + 1, y + self
+        painter.drawLine(x + 1, y + self.squareHeight() - 1,
     
