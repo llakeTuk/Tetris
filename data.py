@@ -238,5 +238,7 @@ class Board(QFrame):
         painter.drawLine(x + 1, y + self.squareHeight() - 1, x + self.squareWidht() - 1, y + self.squareHeight() - 1)
         painter.drawLine(x + self.squareWidth() - 1, y + self.squareHeight() - 1, x + self.squareWidht() - 1, y + 1)
 
-    def 
+class Tetrominoe(object):
+
+    NoShape = 0
     
