@@ -248,4 +248,7 @@ class Tetrominoe(object):
     SquareShape = 5
     LShape = 6
     MirroredLShape = 7
+
+class Shape(object):
+
     
