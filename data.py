@@ -251,4 +251,7 @@ class Tetrominoe(object):
 
 class Shape(object):
 
+    coordsTable = (
+        ((0, 0), (0, 0), (0, 0), (0, 0)),
+
     
