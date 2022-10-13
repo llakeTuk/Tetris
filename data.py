@@ -264,5 +264,8 @@ class Shape(object):
 
     def __init__(self):
 
+        self.coords = [[0,0] for i in range(4)]
+        self.pieceShape = Tetrominoe.NoShape
+
 
     
