@@ -268,5 +268,9 @@ class Shape(object):
         self.pieceShape = Tetrominoe.NoShape
         self.setShape(Tetrominoe.NoShape)
 
+    def shape(self):
+
+        return self.pieceShape
+
 
     
