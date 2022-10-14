@@ -266,6 +266,7 @@ class Shape(object):
 
         self.coords = [[0,0] for i in range(4)]
         self.pieceShape = Tetrominoe.NoShape
+        self.setShape(Tetrominoe.NoShape)
 
 
     
