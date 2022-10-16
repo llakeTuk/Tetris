@@ -272,6 +272,6 @@ class Shape(object):
 
         return self.pieceShape
 
-    def 
+    def setShape(self, shape):
 
     
