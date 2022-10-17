@@ -274,4 +274,11 @@ class Shape(object):
 
     def setShape(self, shape):
 
+        table = Shape.coordsTable[shape]
+        for i in range(4):
+            for j in range(2):
+                self.coords[i][j] = table[i][j]
+        self.pieceShape = shape
+
+
     
