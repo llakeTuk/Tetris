@@ -280,5 +280,7 @@ class Shape(object):
                 self.coords[i][j] = table[i][j]
         self.pieceShape = shape
 
+    def
+
 
     
