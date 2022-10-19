@@ -280,7 +280,9 @@ class Shape(object):
                 self.coords[i][j] = table[i][j]
         self.pieceShape = shape
 
-    def
+    def setRandomShape(self):
+
+        self.setShape(random.randint(1, 7))
 
 
     
