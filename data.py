@@ -284,5 +284,5 @@ class Shape(object):
 
         self.setShape(random.randint(1, 7))
 
-
+    def
     
