@@ -284,5 +284,11 @@ class Shape(object):
 
         self.setShape(random.randint(1, 7))
 
-    def
+    def x(self, index):
+        
+        return self.coords[index][0]
+    
+    def y(self, index):
+        
+        return self.coords[index][1]
     
