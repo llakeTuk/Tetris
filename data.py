@@ -295,4 +295,8 @@ class Shape(object):
     def setX(self, index, x):
         
         self.coords[index][0] = x
+
+    def setY(self, index, y):
+
+        self.coords[index][1] = y
     
